@@ -6,12 +6,15 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all.order(created_at: :desc)
+     @tasks = Task.all.order(finish_date: :asc)
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+  end
+  def  mytask
+     @tasks = Task.all.order(finish_date: :asc)
   end
 
   # GET /tasks/new
@@ -72,7 +75,7 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:avatar,:title, :description, :duration, :start_date, :finish_date, :user_id, :finished)
+      params.require(:task).permit(:avatar,:title, :description, :duration, :start_date, :finish_date, :user_id,:responsible_id, :finished)
 
     end
     private

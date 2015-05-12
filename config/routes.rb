@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :tasks
   resources :users
-  root 'users#index'
+  root 'tasks#index'
+  get '/tasks/:id/mytask' => 'tasks#mytask', as: 'mytask'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

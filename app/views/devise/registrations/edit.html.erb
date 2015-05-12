@@ -4,10 +4,25 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :Username %><br />
+    <%= f.text_field :username, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :Name %><br />
+    <%= f.text_field  :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :LastName %><br />
+    <%= f.text_field  :lastname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+  
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
@@ -27,12 +42,16 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+   <div class="field">
+    <%= f.label :Avatar %><br />
+    <%= f.file_field :avatar%>
+  </div>
+  
   <div class="actions">
     <%= f.submit "Update", class:"button" %>
   </div>
+
+
 <% end %>
 
-<h3>Cancel my account</h3>
 
-<div><p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class:"button"%></p>
-</div>

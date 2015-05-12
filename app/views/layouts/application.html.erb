@@ -28,6 +28,7 @@
 					<ul class="left">
 						<li><%= link_to 'Users', users_path %></li>
 						<li><%= link_to 'Tasks', tasks_path %></li>
+						<%if user_signed_in?%><li><%= link_to 'My Tasks', mytask_path(current_user)%>	</li><%end%>
 					</ul>
 					<ul class="right">
 
