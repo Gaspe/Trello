@@ -13,8 +13,7 @@
 
 <body>
 	
-	<div class="row">
-		<div class="columns large-12">
+	
 			<nav class="top-bar" data-topbar role="navigation">
 				<ul class="title-area">
 					<li class="name">
@@ -45,6 +44,8 @@
 					</ul>
 				</section>
 			</nav>
+	<div class="row">
+		<div class="columns large-12">
 			<%flash.each do |type, message|%>
 			<div data-alert class="alert-box radius <%=flash_class type %>">
 				<%=message%>

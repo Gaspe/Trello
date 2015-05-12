@@ -8,7 +8,6 @@ class CreateTasks < ActiveRecord::Migration
       t.date :finish_date
       t.integer :user_id
       t.boolean :finished
-
       t.timestamps
     end
   end
